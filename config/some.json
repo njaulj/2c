@@ -1,0 +1,17 @@
+{
+	"qiniu":"http://7xkj70.com1.z0.glb.clouddn.com",
+	"yuntu":{
+		"key":"d4b257616c2d8d2a3cdac72df9e22822",
+		"tableid":"55aa1150e4b0a76fce3581dc",
+		"create":"http://yuntuapi.amap.com/datamanage/data/create",
+		"batchcreate":"http://yuntuapi.amap.com/datamanage/data/batchcreate",
+		"update":"http://yuntuapi.amap.com/datamanage/data/update",
+		"delete":"http://yuntuapi.amap.com/datamanage/data/delete",
+		"importstatus":"http://yuntuapi.amap.com/datamanage/batch/importstatus?",
+		"localsearch":"http://yuntuapi.amap.com/datasearch/local?",
+		"aroundsearch":"http://yuntuapi.amap.com/datasearch/around?",
+		"idsearch":"http://yuntuapi.amap.com/datasearch/id?",
+		"filtersearch":"http://yuntuapi.amap.com/datamanage/data/list?"
+
+	}
+}

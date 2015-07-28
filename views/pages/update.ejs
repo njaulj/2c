@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<!--
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.4
+Version: 3.2.0
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8"/>
+    <title>蔓藤2c后台管理 | 管理员 |更新商品</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+    <!-- BEGIN GLOBAL MANDATORY STYLES
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css">
+    --> <link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    <link rel="stylesheet" type="text/css" href="../../assets/global/plugins/select2/select2.css"/>
+    <link rel="stylesheet" type="text/css" href="../../assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="../../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"/>
+    <link href="../../assets/global/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet" type="text/css"/>
+
+    <link rel="stylesheet" type="text/css" href="../../assets/global/plugins/bootstrap-summernote/summernote.css">
+
+    <link rel="stylesheet" type="text/css" href="../../assets/global/plugins/jstree/dist/themes/default/style.min.css"/>
+    <!-- END PAGE LEVEL STYLES -->
+    <!-- BEGIN THEME STYLES -->
+    <link href="../../assets/global/css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css">
+    <link href="../../assets/global/css/plugins.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/admin/layout3/css/layout.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/admin/layout3/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color">
+    <link href="../../assets/admin/layout3/css/custom.css" rel="stylesheet" type="text/css">
+    <!-- END THEME STYLES -->
+    <link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<!-- DOC: Apply "page-header-menu-fixed" class to set the mega menu fixed  -->
+<!-- DOC: Apply "page-header-top-fixed" class to set the top menu fixed  -->
+<body>
+<!-- BEGIN HEADER -->
+
+<!-- END HEADER -->
+<!-- BEGIN PAGE CONTAINER -->
+<div class="page-container">
+    <!-- BEGIN PAGE HEAD -->
+    <div class="page-head">
+        <div class="container">
+            <!-- BEGIN PAGE TITLE -->
+            <div class="page-title">
+                <h1>商品 编辑<small>发布 & 更新 商品</small></h1>
+            </div>
+            <!-- END PAGE TITLE -->
+            <!-- BEGIN PAGE TOOLBAR -->
+
+            <!-- END PAGE TOOLBAR -->
+        </div>
+    </div>
+    <!-- END PAGE HEAD -->
+    <!-- BEGIN PAGE CONTENT -->
+    <div class="page-content">
+        <div class="container">
+            <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+            <!-- /.modal -->
+            <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+            <!-- BEGIN PAGE BREADCRUMB -->
+            <ul class="page-breadcrumb breadcrumb">
+                <li>
+                    <a href="#">商城管理</a><i class="fa fa-circle"></i>
+                </li>
+                <li>
+                    <a href="#">管理中心</a>
+                    <i class="fa fa-circle"></i>
+                </li>
+                <li class="active">
+                    商品编辑
+                </li>
+            </ul>
+            <!-- END PAGE BREADCRUMB -->
+            <!-- BEGIN PAGE CONTENT INNER -->
+            <div class="row">
+                <div class="col-md-12">
+                    <form id="myform" class="form-horizontal form-row-seperated"  method="POST" action="/admin/item/modify/<%=item.id%>">
+                        <input class="hidden" type="text" value="<%=_csrf%>" name="_csrf" id="csrf"/>
+                        <input class="hidden" type="text" id="blog" value="" required name="item[desp]" />
+                        <input class="hidden" type="text" id="meta" value="" name="item[meta]" />
+
+                        <div class="portlet light">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-basket font-green-sharp"></i>
+                                    <span class="caption-subject font-green-sharp bold uppercase">
+                                    编辑 商品 </span>
+                                    <span class="caption-helper">创建 & 更新</span>
+                                </div>
+                                <div class="actions btn-set">
+                                   
+                                    <button id="sure" class="btn green-haze btn-circle"><i class="fa fa-check"></i> 保存</button>
+                                   
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <div class="tabbable">
+                                    <ul class="nav nav-tabs">
+                                        <li class="active">
+                                            <a href="#tab_general" data-toggle="tab">
+                                                通用 </a>
+                                        </li>
+                                        <li>
+                                            <a href="#tab_meta" data-toggle="tab">
+                                                描述 </a>
+                                        </li>
+                                        <li>
+                                            <a href="#tab_images" data-toggle="tab">
+                                                图片 </a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content no-space">
+                                        <div class="tab-pane active" id="tab_general">
+                                            <div class="form-body">
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">商品名称: <span class="required">
+                                                    * </span>
+                                                    </label>
+                                                    <div class="col-md-10">
+                                                        <input type="text" class="form-control" name="item[name]" placeholder="" value="<%=item.name%>">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">所属品类: <span class="required">
+                                                    * </span>
+                                                    </label>
+                                                    <div class="col-md-10">
+                                                        <input class="hidden" type="text" id="group" name="item[GroupId]" value="<%=item.GroupId%>"/>
+                                                        <input type="text" class="form-control" id="groupname" placeholder="" value="<%=item.Group.name%>">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">商品类别: <span class="required">
+                                                    * </span>
+                                                    </label>
+                                                    <div class="col-md-10">
+
+                                                        <div class="form-control height-auto">
+                                                            <div class="scroller" style="height:275px;" data-always-visible="1">
+                                                                
+
+                                                                <div id="tree_4" class="tree-demo">
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">选择品牌: <span class="required">
+                                                    * </span>
+                                                    </label>
+                                                    <div class="col-md-10">
+                                                        <select class="table-group-action-input form-control input-medium" id="brand" name="item[BrandId]">
+                                                       
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">商品状态: <span class="required">
+                                                    * </span>
+                                                    </label>
+                                                    <div class="col-md-10">
+                                                        <select class="table-group-action-input form-control input-medium" name="item[state]">
+                                                            <%if(item.state==0){%>
+                                                            <option value="0">删除</option>
+                                                            <%}else {if(item.state==1){%>
+                                                                <option value="1">上架</option>
+                                                            <%}else{%>
+                                                                 <option value="2">下架</option>
+                                                            <%}}%>
+                                                            <option value="0">删除</option>
+                                                            <option value="1">上架</option>
+                                                            <option value="2">下架</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">开启促销: <span class="required">
+                                                    * </span>
+                                                    </label>
+                                                    <div class="col-md-10">
+                                                        <select class="table-group-action-input form-control input-medium" name="item[istate]">
+                                                            <option value="<%=item.istate%>"><%=item.istate?'开启':'不开启'%></option>
+                                                            <option value="0">不开启</option>
+                                                            <option value="1">开启</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">促销时间段: <span class="required">
+                                                    * </span>
+                                                    </label>
+                                                    <div class="col-md-10">
+                                                        <div class="input-group input-large date-picker input-daterange" data-date="0000-00-00" data-date-format="yyyy-mm-dd">
+                                                            <input type="text" class="form-control" name="item[saleStart]" value="<%=item.saleStart%>">
+                                                            <span class="input-group-addon">
+                                                            to </span>
+                                                            <input type="text" class="form-control" name="item[saleEnd]" value="<%=item.saleEnd%>">
+                                                        </div>
+                                                        <span class="help-block">
+                                                        只有促销为开启状态，促销时间才会生效. </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="tab_meta">
+                                            <div class="form-body">
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">商品关键词:</label>
+                                                    <div class="col-md-10">
+                                                        <input type="hidden" name="item[keywords]" class="form-control select2_sample3" value="<%=item.keywords%>">
+                                                        <span class="help-block">
+                                                        精准的关键词能够让买家更快的搜索导商品 </span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label">商品短描述:</label>
+                                                    <div class="col-md-10">
+                                                        <textarea class="form-control maxlength-handler" rows="8" name="item[shortDesp]" maxlength="255"><%-item.shortDesp%></textarea>
+                                                        <span class="help-block">
+                                                     短小精悍的简介 </span>
+                                                    </div>
+                                                </div>
+                                                <div class="tabbable">
+                                                        <ul class="nav nav-tabs">
+                                                            <li class="active">
+                                                                <a href="#product_general" data-toggle="tab">
+                                                                    商品详情 </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#product_meta" data-toggle="tab">
+                                                                    商品参数 </a>
+                                                            </li>
+            
+                                                        </ul>
+                                                        <div class="tab-content no-space">
+                                                         <div class="tab-pane active" id="product_general">
+
+                                                                <div class="form-group">
+                                                                    <label class="col-md-2 control-label">商品详情:</label>
+                                                                    <div class="col-md-10">
+                                                                        <div name="summernote" id="summernote_1">
+                                                                        <%-item.desp%></div>
+                                                                    </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="tab-pane" id="product_meta">
+
+                                                                <div class="form-group">
+                                                                    <label class="col-md-2 control-label">商品参数:</label>
+                                                                    <div class="col-md-10">
+                                                                        <div name="summernote" id="summernote_2">
+                                                                        <%-item.meta%></div>
+                                                                    </div>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="tab_images">
+
+                                            <div id="tab_images_uploader_container" class="text-align-reverse margin-bottom-10">
+                                                <a id="tab_images_uploader_pickfiles" href="javascript:;" class="btn yellow">
+                                                    <i class="fa fa-plus"></i> 选择图片</a>
+                                                <a id="tab_images_uploader_uploadfiles" href="javascript:;" class="btn green">
+                                                    <i class="fa fa-share"></i>上传图片</a>
+                                            </div>
+                                            <span class="help-block">
+                                                     说明：权重最大的为商品主图,只有权重没有其余属性的为商品更多图片<br>
+                                                     设置了其他属性的系统会自动匹配成同一商品下的不同规格属性</span>
+                                            <div class="row">
+                                                <div id="tab_images_uploader_filelist" class="col-md-6 col-sm-12">
+                                                </div>
+                                            </div>
+                                            <table class="table table-bordered table-hover">
+                                                <thead>
+                                                <tr role="row" class="heading">
+                                                    <th width="8%">
+                                                        图片
+                                                    </th>
+                                                    <th width="25%">
+                                                        名称
+                                                    </th>
+                                                    <th width="8%">
+                                                        价格
+                                                    </th>
+
+                                                    <th width="10%">
+                                                        市场价
+                                                    </th>
+                                                    <th width="10%">
+                                                        数量
+                                                    </th>
+                                                    <th width="10%">
+                                                        权重
+                                                    </th>
+                                                    <th width="10%">
+                                                    </th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <%item.Pics.forEach(function(pic,index){%>
+                                                    <tr>
+                                                        <td class="hidden"><input type="text" name="differ[did]" value="<%=pic.id%>"></td>
+                                                        <td><a href="http://7xioyb.com1.z0.glb.clouddn.com/<%=pic.cloudPath%>" class="fancybox-button" data-rel="fancybox-button"><img class="img-responsive" src="http://7xioyb.com1.z0.glb.clouddn.com/<%=pic.cloudPath%>?imageMogr2/thumbnail/91x" alt=""></a></td>
+                                                        <td><input type="text" class="form-control" name="pic[picSku]" value="<%=pic.picSku%>"></td>
+                                                        <td><input type="text" class="form-control" name="pic[picPrice]" value="<%=pic.picPrice%>" placeholder=""></td>
+                                                        <td><input type="text" class="form-control" name="pic[picMarket]" value="<%=pic.picMarket%>" placeholder=""></td>
+                                                        <td><input type="text"  class="form-control" name="pic[amount]" value="<%=pic.amount%>" placeholder=""></td>
+                                                         <td><input type="text"  class="form-control" name="pic[heavy]" value="<%=pic.heavy%>" placeholder=""></td>
+                                                        <td><a href="javascript:;" data-id="<%=pic.id%>" class="del btn default btn-sm"><i class="fa fa-times"></i> Remove </a></td>
+                                                    </tr>
+
+                                                    <%})%>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- END PAGE CONTENT INNER -->
+        </div>
+    </div>
+    <!-- END PAGE CONTENT -->
+</div>
+<!-- END PAGE CONTAINER -->
+<!-- BEGIN PRE-FOOTER -->
+
+<!-- END PRE-FOOTER -->
+<!-- BEGIN FOOTER -->
+
+<div class="scroll-to-top">
+    <i class="icon-arrow-up"></i>
+</div>
+<!-- END FOOTER -->
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+<!--[if lt IE 9]>
+<script src="../../assets/global/plugins/respond.min.js"></script>
+<script src="../../assets/global/plugins/excanvas.min.js"></script>
+<![endif]-->
+<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+<script src="../../assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script type="text/javascript" src="../../assets/global/plugins/select2/select2.min.js"></script>
+<script type="text/javascript" src="../../assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
+<script type="text/javascript" src="../../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript" src="../../assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../../assets/global/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script>
+<script type="text/javascript" src="../../assets/global/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
+<script src="../../assets/global/plugins/plupload/js/plupload.full.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap-summernote/summernote.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="../../assets/global/plugins/select2/select2.min.js"></script>
+
+<script src="../../assets/global/plugins/jstree/dist/jstree.min.js"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="../../assets/admin/pages/scripts/ui-tree.js"></script>
+
+<script src="../../assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="../../assets/admin/layout3/scripts/layout.js" type="text/javascript"></script>
+<script src="../../assets/admin/layout3/scripts/demo.js" type="text/javascript"></script>
+<script src="../../assets/global/scripts/datatable.js"></script>
+<script src="../../assets/admin/pages/scripts/ecommerce-products-edit.js"></script>
+
+<script src="../../assets/admin/pages/scripts/components-editors.js"></script>
+<script src="../../assets/admin/pages/scripts/components-editors2.js"></script>
+
+<script src="../../assets/admin/pages/scripts/form-samples.js"></script>
+
+
+<!-- END PAGE LEVEL SCRIPTS -->
+<script>
+    jQuery(document).ready(function() {
+        Metronic.init(); // init metronic core components
+        Layout.init(); // init current layout
+        Demo.init(); // init demo features
+        FormSamples.init();
+
+        EcommerceProductsEdit.init();
+        ComponentsEditors.init();
+        ComponentsEditors2.init();
+
+        UITree.init();
+
+
+
+        $("#sure").click(function(){
+            $("#blog").val($("#summernote_1").code())
+            $("#meta").val($("#summernote_2").code())
+            $("#myform").submit()
+        })
+        var BrandId = <%=item.BrandId%>
+        $.ajax({
+            method:'get',
+            url:'/api/brand/list',
+            success:function (data){
+                data.data.forEach(function(brand){
+                    if(brand.id==BrandId){
+
+                    $("#brand").append('<option value='+brand.id+' selected="selected">'+brand.brandName+'</option>')
+                    }else{
+
+                    $("#brand").append('<option value='+brand.id+'>'+brand.brandName+'</option>')
+                    }
+                })
+            }
+        })
+        
+
+    });
+    function d()
+    {
+        $(function () {
+            $(".del").on('click', function () {
+                var target = $(this)
+                var id = target.data("id")
+
+                $.ajax({
+                    method: 'delete',
+                    url: '/admin/pic/delete?id=' + id,
+                    headers: {
+                        'x-csrf-token': $("#csrf").val()
+                    },
+                    success: function (data) {
+                        console.log(data)
+                        target.parent().parent().remove()
+                    }
+
+                })
+            })
+        })
+    }
+</script>
+<!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

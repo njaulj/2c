@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.4
+Version: 3.2.0
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+<meta charset="utf-8"/>
+<title>英语风采大赛排位系统</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0 ,maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
+<!-- END GLOBAL MANDATORY STYLES -->
+<!-- BEGIN PAGE LEVEL STYLES -->
+<link href="../../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/admin/pages/css/profile.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/admin/pages/css/tasks.css" rel="stylesheet" type="text/css"/>
+<!-- END PAGE LEVEL STYLES -->
+<!-- BEGIN THEME STYLES -->
+<link href="../../assets/global/css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css">
+<link href="../../assets/global/css/datouwang.css" id="style_components" rel="stylesheet" type="text/css">
+<link href="../../assets/global/css/plugins.css" rel="stylesheet" type="text/css">
+<link href="../../assets/admin/layout3/css/layout.css" rel="stylesheet" type="text/css">
+<link href="../../assets/admin/layout3/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color">
+<link href="../../assets/admin/layout3/css/custom.css" rel="stylesheet" type="text/css">
+<!-- END THEME STYLES -->
+<link rel="shortcut icon" href="favicon.ico"/>
+<script language="javascript">
+<!--
+// global variables
+var timer;
+var flag = new Array(100);
+var existingnum = new Array(100);
+var clickTimes = 0;
+var randnum;
+var cellnum =1;
+var mobile = new Array();
+var paiwei = new Array()
+// set data here!!
+<%scores.forEach(function(score,index){%>
+	// mobile.push("<%=score.com+'_'+score.name%>")
+	mobile[<%=index%>]="<%=score.com+'_'+score.name%>"
+	paiwei[<%=index%>]="<%=score._id%>"
+
+	<%})%>
+
+var num = mobile.length-1;
+function getRandNum(){
+num=parseInt(num);
+var y=GetRnd(0,num);
+document.getElementById("result").value = mobile[y];
+document.getElementById("paiwei").value = paiwei[y];
+}
+function start(){
+clearInterval(timer);
+timer = setInterval('change()',50);
+}//欢迎来到站长特效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+function ok(){
+clearInterval(timer);
+}
+function GetRnd(m,n){
+randnum =parseInt(Math.random()*(n-m+1));
+return randnum;
+}
+function setTimer(){
+ time=setInterval("getRandNum()",10);
+ document.getElementById("start").disabled = true;
+ document.getElementById("end").disabled = false;
+}
+function clearTimer(){
+ noDupNum();
+ clearInterval(time);
+ document.getElementById("start").disabled = false;
+ document.getElementById("end").disabled = true;
+ setValues();
+}//欢迎来到站长特效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+function noDupNum(){
+ // to remove the selected mobile phone number
+ mobile.removeEleAt(randnum);
+ paiwei.removeEleAt(randnum);
+ // to reorganize the mobile number array!!
+ var o = 0;
+ for(p=0; p<mobile.length;p++){
+ if(typeof mobile[p]!="undefined"){
+ mobile[o] = mobile[p];
+ o++;
+ }
+ }
+ num = mobile.length-1;
+ }
+// method to remove the element in the array
+Array.prototype.removeEleAt = function(dx)
+ {
+ if(isNaN(dx)||dx>this.length){return false;}
+ this.splice(dx,1);
+ }
+// set mobile phone numbers to the table cell
+function setValues(){
+
+ 	$.ajax({
+				type:'get',
+				url:'/paiweino?id='+document.getElementById("paiwei").value+'&comno='+cellnum,
+                success:function(result){
+                	 
+                },
+                error:function(){
+
+                }
+
+			})
+ 	document.getElementById(cellnum).value =
+						document.getElementById("result").value ;
+						 cellnum++;
+
+ }//欢迎来到站长特效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+//-->
+</script>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<!-- DOC: Apply "page-header-menu-fixed" class to set the mega menu fixed  -->
+<!-- DOC: Apply "page-header-top-fixed" class to set the top menu fixed  -->
+<body>
+<!-- BEGIN HEADER -->
+<div class="header">
+      <div class="container">
+        <a class="site-logo" href="/"><img src="../../assets/global/img/logo-02.png" height=120px width=120px alt="石化英语风采大赛"></a>
+
+       
+        <!--END CART -->
+
+      </div>
+    </div>
+<!-- END HEADER -->
+<!-- BEGIN PAGE CONTAINER -->
+<div class="page-container">
+	<!-- BEGIN PAGE HEAD -->
+<input class="hidden" name="_csrf" id="csrf" value="<%=_csrf%>" />
+	<!-- END PAGE HEAD -->
+	<!-- BEGIN PAGE CONTENT -->
+	<div class="page-content">
+		<div class="container">
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+		
+			<!-- /.modal -->
+			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<!-- BEGIN PAGE BREADCRUMB -->
+			<ul class="page-breadcrumb breadcrumb">
+				<li>
+					<a href="#">主页</a><i class="fa fa-circle"></i>
+				</li>
+				<li>
+					<a href="extra_profile.html">比赛</a>
+					<i class="fa fa-circle"></i>
+				</li>
+				<li class="active">
+					 排位系统
+				</li>
+			</ul>
+			<!-- END PAGE BREADCRUMB -->
+			<!-- BEGIN PAGE CONTENT INNER -->
+			<div class="row margin-top-10">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<!-- BEGIN PROFILE SIDEBAR -->
+				
+					<!-- END BEGIN PROFILE SIDEBAR -->
+					<!-- BEGIN PROFILE CONTENT -->
+					<div class="profile-content">
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<!-- BEGIN PORTLET -->
+								<h1>各单位选手</h1>
+									<p>
+									<input id="result" type="text" size="30"
+									style="height:130px;width:800px;border:2px solid red;font-size:120;" readonly/>
+									<input id="paiwei" class="hidden" type="text" size="30"
+									style="height:130px;width:800px;border:2px solid red;font-size:120;" readonly/>
+									</p>
+									<p>
+									<input id="start" type="button" value="开始" style="border:1px solid;border-color:#aaa #000 #000 #aaa;width:4em;background:#fc0;" onclick="setTimer()" />
+									<input id="end" type="button" value="停止" style="border:1px solid;border-color:#aaa #000 #000 #aaa;width:4em background:#fc0;" onclick="clearTimer()" disabled/>
+									</p>
+									<%scores.forEach(function(score,index){%>
+								<span class="col-md-1 text-danger" style="height:40px"><%=index+1%></span>
+								<span class="col-md-3"  style="height:40px"><input name="text<%=index+1%>" type="text" id="<%=index+1%>" readonly/></span>
+								<%})%>
+								
+
+
+			<!-- END PAGE CONTENT INNER -->
+		</div>
+	</div>
+	<!-- END PAGE CONTENT -->
+</div>
+<!-- END PAGE CONTAINER -->
+<!-- BEGIN PRE-FOOTER -->
+
+<!-- END PRE-FOOTER -->
+<!-- BEGIN FOOTER -->
+
+<div class="scroll-to-top">
+	<i class="icon-arrow-up"></i>
+</div>
+<!-- END FOOTER -->
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+<!--[if lt IE 9]>
+<script src="../../assets/global/plugins/respond.min.js"></script>
+<script src="../../assets/global/plugins/excanvas.min.js"></script> 
+<![endif]-->
+<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+<script src="../../assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script src="../../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="../../assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="../../assets/global/scripts/datouwang.js" type="text/javascript"></script>
+
+<script src="../../assets/admin/layout3/scripts/layout.js" type="text/javascript"></script>
+<script src="../../assets/admin/layout3/scripts/demo.js" type="text/javascript"></script>
+<script src="../../assets/admin/pages/scripts/profile.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL SCRIPTS -->
+<script>
+jQuery(document).ready(function() {       
+   	// initiate layout and plugins
+   	Metronic.init(); // init metronic core components
+	Layout.init(); // init current layout
+	Demo.init(); // init demo features\
+	Profile.init(); // init page demo
+});
+</script>
+<!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

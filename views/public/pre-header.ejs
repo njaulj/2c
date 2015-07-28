@@ -1,0 +1,39 @@
+<div class="pre-header">
+        <div class="container">
+            <div class="row">
+                <!-- BEGIN TOP BAR LEFT PART -->
+                <div class="col-md-6 col-sm-6 additional-shop-info">
+                    <ul class="list-unstyled list-inline">
+                        <li><i class="fa fa-phone"></i><span>+400-018-9096</span></li>
+                        <!-- BEGIN CURRENCIES -->
+                        <li class="shop-currencies">
+                            <a href="javascript:void(0);" class="current">¥</a>
+                        </li>
+                        <!-- END CURRENCIES -->
+                        <!-- BEGIN LANGS -->
+                        <li class="langs-block">
+                            <a href="javascript:void(0);" class="current">中文</a>
+                        </li>
+                        <!-- END LANGS -->
+                    </ul>
+                </div>
+                <!-- END TOP BAR LEFT PART -->
+                <!-- BEGIN TOP BAR MENU -->
+                <div class="col-md-6 col-sm-6 additional-nav">
+                    <ul class="list-unstyled list-inline pull-right">
+                        <li><a href="/user/index">我的账户</a></li>
+                        <li><a href="/user/order/list">我的订单</a></li>
+                        <li><a href="/user/cart/checklist">结算</a></li>
+                        <%if(locals.user && locals.user != undefined){%>
+                        <li><a href="/signin"><%=user.username%></a></li>
+                        <li><a href="/logout">注销</a></li>
+                        <%}else{%>
+                        <li id="signin"><a href="/signin">登录</a></li>
+                        <li id="signup"><a href="/signup">注册</a></li>
+                        <%}%>
+                    </ul>
+                </div>
+                <!-- END TOP BAR MENU -->
+            </div>
+        </div>        
+    </div>

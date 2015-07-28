@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 3.4
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest (the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<!-- Head BEGIN -->
+<head>
+  <meta charset="utf-8">
+  <title>Cool green dress with red bell | Metronic Shop UI</title>
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <meta content="Metronic Shop UI description" name="description">
+  <meta content="Metronic Shop UI keywords" name="keywords">
+  <meta content="keenthemes" name="author">
+
+  <meta property="og:site_name" content="-CUSTOMER VALUE-">
+  <meta property="og:title" content="-CUSTOMER VALUE-">
+  <meta property="og:description" content="-CUSTOMER VALUE-">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="-CUSTOMER VALUE-"><!-- link to image for socio -->
+  <meta property="og:url" content="-CUSTOMER VALUE-">
+
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- Fonts START 
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|PT+Sans+Narrow|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css"> -->
+  <!-- Fonts END -->
+
+  <!-- Global styles START -->          
+  <link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Global styles END --> 
+   
+  <!-- Page level plugin styles START -->
+  <link href="../../assets/global/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet">
+  <link href="../../assets/global/plugins/carousel-owl-carousel/owl-carousel/owl.carousel.css" rel="stylesheet">
+  <link href="../../assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
+  <link href="../../assets/global/plugins/jquery-ui/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"><!-- for slider-range -->
+  <link href="../../assets/global/plugins/rateit/src/rateit.css" rel="stylesheet" type="text/css">
+  <!-- Page level plugin styles END -->
+
+  <!-- Theme styles START -->
+  <link href="../../assets/global/css/components.css" rel="stylesheet">
+  <link href="../../assets/frontend/layout/css/style.css" rel="stylesheet">
+  <link href="../../assets/frontend/pages/css/style-shop.css" rel="stylesheet" type="text/css">
+  <link href="../../assets/frontend/layout/css/style-responsive.css" rel="stylesheet">
+  <link href="../../assets/frontend/layout/css/themes/red.css" rel="stylesheet" id="style-color">
+  <link href="../../assets/frontend/layout/css/custom.css" rel="stylesheet">
+  <!-- Theme styles END -->
+</head>
+<!-- Head END -->
+
+<!-- Body BEGIN -->
+<body class="ecommerce">
+  <input type="text" class="hidden" value="<%=_csrf%>" id="csrf" />
+    <!-- BEGIN STYLE CUSTOMIZER -->
+    
+    <!-- END BEGIN STYLE CUSTOMIZER --> 
+
+    <!-- BEGIN TOP BAR -->
+    
+    <!-- END TOP BAR -->
+
+    <!-- BEGIN HEADER -->
+    <%-include ../public/pre-header%>
+    <%-include ../public/header%>
+    <!-- Header END -->
+    
+    <div class="main">
+      <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="">Store</a></li>
+            <li class="active">Cool green dress with red bell</li>
+        </ul>
+        <!-- BEGIN SIDEBAR & CONTENT -->
+        <div class="row margin-bottom-40">
+          <!-- BEGIN SIDEBAR -->
+          <div class="sidebar col-md-3 col-sm-5">
+            <ul class="list-group margin-bottom-25 sidebar-menu">
+              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Ladies</a></li>
+              <li class="list-group-item clearfix dropdown active">
+                <a href="shop-product-list.html" class="collapsed">
+                  <i class="fa fa-angle-right"></i>
+                  Mens
+                  
+                </a>
+                <ul class="dropdown-menu" style="display:block;">
+                  <li class="list-group-item dropdown clearfix active">
+                    <a href="shop-product-list.html" class="collapsed"><i class="fa fa-angle-right"></i> Shoes </a>
+                      <ul class="dropdown-menu" style="display:block;">
+                        <li class="list-group-item dropdown clearfix">
+                          <a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Classic </a>
+                          <ul class="dropdown-menu">
+                            <li><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Classic 1</a></li>
+                            <li><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Classic 2</a></li>
+                          </ul>
+                        </li>
+                        <li class="list-group-item dropdown clearfix active">
+                          <a href="shop-product-list.html" class="collapsed"><i class="fa fa-angle-right"></i> Sport  </a>
+                          <ul class="dropdown-menu" style="display:block;">
+                            <li class="active"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Sport 1</a></li>
+                            <li><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Sport 2</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                  </li>
+                  <li><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Trainers</a></li>
+                  <li><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Jeans</a></li>
+                  <li><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Chinos</a></li>
+                  <li><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> T-Shirts</a></li>
+                </ul>
+              </li>
+              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Kids</a></li>
+              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Accessories</a></li>
+              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Sports</a></li>
+              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Brands</a></li>
+              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Electronics</a></li>
+              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Home &amp; Garden</a></li>
+              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Custom Link</a></li>
+            </ul>
+
+            <div class="sidebar-products clearfix">
+              <h2>Bestsellers</h2>
+              <div class="item">
+                <a href="shop-item.html"><img src="../../assets/frontend/pages/img/products/k1.jpg" alt="Some Shoes in Animal with Cut Out"></a>
+                <h3><a href="shop-item.html">Some Shoes in Animal with Cut Out</a></h3>
+                <div class="price">$31.00</div>
+              </div>
+              <div class="item">
+                <a href="shop-item.html"><img src="../../assets/frontend/pages/img/products/k4.jpg" alt="Some Shoes in Animal with Cut Out"></a>
+                <h3><a href="shop-item.html">Some Shoes in Animal with Cut Out</a></h3>
+                <div class="price">$23.00</div>
+              </div>
+              <div class="item">
+                <a href="shop-item.html"><img src="../../assets/frontend/pages/img/products/k3.jpg" alt="Some Shoes in Animal with Cut Out"></a>
+                <h3><a href="shop-item.html">Some Shoes in Animal with Cut Out</a></h3>
+                <div class="price">$86.00</div>
+              </div>
+            </div>
+          </div>
+          <!-- END SIDEBAR -->
+
+          <!-- BEGIN CONTENT -->
+          <div class="col-md-9 col-sm-7">
+            <div class="product-page">
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="product-main-image">
+                    <img id="pic"  src="http://7xioyb.com1.z0.glb.clouddn.com/@/product/<%=product.differShow.picPath%>?imageView2/1/w/382/h/509/interlace/1" alt="Cool green dress with red bell" class="img-responsive" data-BigImgsrc="http://7xioyb.com1.z0.glb.clouddn.com/@/product/<%=product.differShow.picPath%>">
+                  </div>
+                  <div class="product-other-images">
+                    <%differs.forEach(function(differ,index){%>
+                      <a href="http://7xioyb.com1.z0.glb.clouddn.com/@/product/<%=differ.picPath%>" class="fancybox-button" rel="photos-lib"><img alt="Berry Lace Dress" src="http://7xioyb.com1.z0.glb.clouddn.com/@/product/<%=differ.picPath%>?imageView2/1/w/58/h/77"></a>
+                    <%})%>
+                    
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <h1><%=product.productName%></h1>
+                  <div class="price-availability-block clearfix">
+                    <div class="price">
+                      <strong><span>$</span><b id="differPrice"><%=(product.differShow.differPrice/100).toFixed(2)%></b></strong>
+                      <em>$<span id="marketPrice"><%=(product.differShow.marketPrice/100).toFixed(2)%></span></em>
+                    </div>
+                    <div class="availability">
+                      商品状态: <strong id="onsale" class="bg-red"><%=parseFloat((product.differShow.differPrice/product.differShow.marketPrice)*10).toFixed(1)%>折</strong>
+                    </div>
+                  </div>
+                  <div class="description">
+                    <p><%-product.shortDesp%></p>
+                  </div>
+                  <div class="product-page-options">
+                  <div class="pull-left">
+                        <label class="control-label">选择:</label>
+                      <select id="differ" class="form-control input-sm">
+                        <option data-pid=<%=product._id%> data-bid=<%=product.brand_id._id%> data-pic=<%=product.differShow.picPath%> data-did=<%=product.differShow._id%> data-price=<%=product.differShow.differPrice%> data-market=<%=product.differShow.marketPrice%>><%=product.differShow.differName%></option>
+                        
+                        <%differs.forEach(function(differ,index){%>
+                        <%if(!differ._id.equals(product.differShow._id)){%>
+                        <option data-pid=<%=differ.product_id%> data-bid=<%=product.brand_id._id%> data-pic=<%=differ.picPath%> data-did=<%=differ._id%> data-price=<%=differ.differPrice%> data-market=<%=differ.marketPrice%>><%=differ.differName%></option>
+                      <%}})%>
+                    </select>
+                     </div>
+                  </div>
+                  <div class="product-page-cart">
+                    <div class="product-quantity">
+                        <input id="product-quantity" type="text" value="1"  class="form-control input-sm">
+                    </div>
+                    <button id="cart" class="btn btn-primary" type="submit">加入购物车</button>
+                  </div>
+                  <div class="review">
+                    <input type="range" value="4" step="0.25" id="backing4">
+                    <div class="rateit" data-rateit-backingfld="#backing4" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5">
+                    </div>
+                    <a href="javascript:;">击败了 80% 的商品</a>&nbsp;&nbsp;
+                  </div>
+                  <ul class="social-icons">
+                    <li><a class="facebook" data-original-title="facebook" href="javascript:;"></a></li>
+                    <li><a class="twitter" data-original-title="twitter" href="javascript:;"></a></li>
+                    <li><a class="googleplus" data-original-title="googleplus" href="javascript:;"></a></li>
+                    <li><a class="evernote" data-original-title="evernote" href="javascript:;"></a></li>
+                    <li><a class="tumblr" data-original-title="tumblr" href="javascript:;"></a></li>
+                  </ul>
+                </div>
+
+                <div class="product-page-content">
+                  <ul id="myTab" class="nav nav-tabs">
+                    <li  class="active"><a href="#Description" data-toggle="tab">商品详情</a></li>
+                    <li  ><a href="#Meta" data-toggle="tab">商品参数</a></li>
+                    <li><a href="#Reviews" data-toggle="tab">累计评价 (2)</a></li>
+                  </ul>
+                  <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade  in active" id="Description">
+                      <p><%-product.productDesp%></p>
+                    </div>
+                    <div class="tab-pane fade " id="Meta">
+                      <p><%-product.productMeta%></p>
+                    </div>
+                    
+                    <div class="tab-pane fade" id="Reviews">
+                      <!--<p>There are no reviews for this product.</p>-->
+                      <div class="review-item clearfix">
+                        <div class="review-item-submitted">
+                          <strong>Bob</strong>
+                          <em>30/12/2013 - 07:37</em>
+                          <div class="rateit" data-rateit-value="5" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+                        </div>                                              
+                        <div class="review-item-content">
+                            <p>Sed velit quam, auctor id semper a, hendrerit eget justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis vel arcu pulvinar dolor tempus feugiat id in orci. Phasellus sed erat leo. Donec luctus, justo eget ultricies tristique, enim mauris bibendum orci, a sodales lectus purus ut lorem.</p>
+                        </div>
+                      </div>
+                      <div class="review-item clearfix">
+                        <div class="review-item-submitted">
+                          <strong>Mary</strong>
+                          <em>13/12/2013 - 17:49</em>
+                          <div class="rateit" data-rateit-value="2.5" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+                        </div>                                              
+                        <div class="review-item-content">
+                            <p>Sed velit quam, auctor id semper a, hendrerit eget justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis vel arcu pulvinar dolor tempus feugiat id in orci. Phasellus sed erat leo. Donec luctus, justo eget ultricies tristique, enim mauris bibendum orci, a sodales lectus purus ut lorem.</p>
+                        </div>
+                      </div>
+
+                      <!-- BEGIN FORM-->
+                      
+                      <!-- END FORM--> 
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sticker sticker-sale"></div>
+              </div>
+            </div>
+          </div>
+          <!-- END CONTENT -->
+        </div>
+        <!-- END SIDEBAR & CONTENT -->
+
+        <!-- BEGIN SIMILAR PRODUCTS -->
+        
+        <!-- END SIMILAR PRODUCTS -->
+      </div>
+    </div>
+
+    <!-- BEGIN BRANDS -->
+    
+    <!-- END BRANDS -->
+
+    <!-- BEGIN STEPS -->
+    
+    <!-- END STEPS -->
+
+    <!-- BEGIN PRE-FOOTER -->
+    
+    <!-- END PRE-FOOTER -->
+
+    <!-- BEGIN FOOTER -->
+    
+    <!-- END FOOTER -->
+
+    <!-- BEGIN fast view of a product -->
+    
+    <!-- END fast view of a product -->
+
+    <!-- Load javascripts at bottom, this will reduce page load time -->
+    <!-- BEGIN CORE PLUGINS(REQUIRED FOR ALL PAGES) -->
+    <!--[if lt IE 9]>
+    <script src="../../assets/global/plugins/respond.min.js"></script>  
+    <![endif]-->  
+    <script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+    <script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+    <script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>      
+    <script src="../../assets/frontend/layout/scripts/back-to-top.js" type="text/javascript"></script>
+    <script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+
+    <!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
+    <script src="../../assets/global/plugins/fancybox/source/jquery.fancybox.pack.js" type="text/javascript"></script><!-- pop up -->
+    <script src="../../assets/global/plugins/carousel-owl-carousel/owl-carousel/owl.carousel.min.js" type="text/javascript"></script><!-- slider for products -->
+    <script src='../../assets/global/plugins/zoom/jquery.zoom.min.js' type="text/javascript"></script><!-- product zoom -->
+    <script src="../../assets/global/plugins/bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script><!-- Quantity -->
+    <script src="../../assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+    <script src="../../assets/global/plugins/rateit/src/jquery.rateit.js" type="text/javascript"></script>
+    <script src="../../assets/global/scripts/cart.js" type="text/javascript"></script>
+    <script src="../../assets/global/scripts/newp.js" type="text/javascript"></script>
+
+
+
+    <script src="../../assets/frontend/layout/scripts/layout.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var dselect=[]
+        jQuery(document).ready(function() {
+            Layout.init();    
+            Layout.initOWL();
+            Layout.initTwitter();
+            Layout.initImageZoom();
+            Layout.initTouchspin();
+            Layout.initUniform();
+            Layout.initFixHeaderWithPreHeader();
+
+            $("#popnew").hover(function(){
+               t=setTimeout(function(){
+
+                Newp.init()},200)
+            },
+            function(){
+
+              clearTimeout(t)
+            }
+            )       
+
+            $(".top-cart-block").hover(function(){
+                t=setTimeout(function(){
+
+                Ecart.init()},800)
+            },
+            function(){
+              clearTimeout(t)
+            }
+            ) 
+
+
+             
+
+            $("#differ").change(function(){
+               var differ=$("#differ").find("option:selected");
+               var did=differ.data("did")
+                        
+
+               if(inarray(did,dselect)==2){
+                  $("#cart").attr("disabled",true)
+               }else{
+                $("#cart").attr("disabled",false)
+               }
+
+               $("#differPrice").text((differ.data("price")/100).toFixed(2))
+               $("#marketPrice").text((differ.data("market")/100).toFixed(2))
+             //  $(".zoomImg").attr("src","http://7xioyb.com1.z0.glb.clouddn.com/@/product/"+differ.data("pic"))
+                $(".zoomImg").remove()
+               $("#pic").attr("src","http://7xioyb.com1.z0.glb.clouddn.com/@/product/"+differ.data("pic")+"?imageView2/1/w/382/h/509/interlace/1")
+
+               $("#pic").attr("data-BigImgsrc","http://7xioyb.com1.z0.glb.clouddn.com/@/product/"+differ.data("pic"))
+
+               $("#onsale").text(parseFloat(differ.data("price")/differ.data("market")*10).toFixed(1)+'折')
+                Layout.initImageZoom();
+
+            })
+
+  
+
+            $("#cart").click(function(){
+               var differ=$("#differ").find("option:selected");
+              
+               
+               pid=differ.data("pid")
+               bid=differ.data("bid")
+               did=differ.data("did")
+               dselect.push(did)
+               console.log(dselect)
+               
+               num=$("#product-quantity").val()
+
+
+               $.ajax({
+                url:'/addCart/'+bid+'/'+pid+'/'+did+'/'+num,
+                type:'get',
+                success:function(data){
+                   // alert('good')
+                   $("#cart").attr("disabled",true)
+                },
+                error:function(data){
+                   // alert('error')
+
+                }
+               })
+            })
+           
+
+        });
+
+    
+        
+
+
+        function v(){
+           $(function() {  
+        $(".del-goods").bind('click',function(){
+             var cid=$(this).data("cid")
+             var num=$(this).data("num")
+             var did=$(this).data("did")
+             var holder=$(this)
+              $.ajax({
+                type:'post',
+                url:'/cart/del/'+cid+'/1',
+                headers:{
+                  'x-csrf-token':$("#csrf").val()
+                },
+                success:function(result){
+                    var price=parseInt(holder.prev().text().substr(1))*100
+                    var subtotal=price*num
+
+                    var evertotal=parseInt($(".top-cart-info-value").text())*100
+                    console.log(evertotal)
+                    var nowtotal=evertotal-subtotal
+
+                    $(".top-cart-info-value").text((nowtotal/100).toFixed(2))
+
+                    var s="#"+cid
+                    dselect.pop(did)
+                    console.log(dselect)
+
+                    $(s).remove()
+
+                }
+              })
+        
+        })
+
+
+        $(".add2cart").bind('click',function(){
+                   var differ =$(this)
+                   console.log($(this))
+
+                   pid=differ.data("pid")
+                   bid=differ.data("bid")
+                   did=differ.data("did")
+
+                  num=1
+                  
+                
+                  console.log(pid+bid+did)
+
+
+                   $.ajax({
+                        url:'/addCart/'+bid+'/'+pid+'/'+did+'/'+num,
+                        type:'get',
+                        success:function(data){
+                           // alert('good')
+                           differ.attr("disabled",true)
+                           differ.text("")
+                        },
+                        error:function(data){
+                           // alert('error')
+
+                        }
+                       })
+
+
+
+              }) 
+        })
+        } 
+
+        function inarray(a,b){
+          for (i in b){
+            if(b[i]==a){
+              return 2
+            }
+          }
+          return 1
+        }
+       //   var cid=$(this).data("cid")
+         
+        
+
+    </script>
+
+
+    <!-- END PAGE LEVEL JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

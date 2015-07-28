@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 3.4
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest (the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<!-- Head BEGIN -->
+<head>
+  <meta charset="utf-8">
+  <title>Checkout | Metronic Shop UI</title>
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <meta content="Metronic Shop UI description" name="description">
+  <meta content="Metronic Shop UI keywords" name="keywords">
+  <meta content="keenthemes" name="author">
+
+  <meta property="og:site_name" content="-CUSTOMER VALUE-">
+  <meta property="og:title" content="-CUSTOMER VALUE-">
+  <meta property="og:description" content="-CUSTOMER VALUE-">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="-CUSTOMER VALUE-"><!-- link to image for socio -->
+  <meta property="og:url" content="-CUSTOMER VALUE-">
+
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- Fonts START -->
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|PT+Sans+Narrow|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css"> 
+  <!-- Fonts END -->
+
+  <!-- Global styles START -->          
+  <link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Global styles END --> 
+   
+  <!-- Page level plugin styles START -->
+  <link href="../../assets/global/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet">
+  <link href="../../assets/global/plugins/carousel-owl-carousel/owl-carousel/owl.carousel.css" rel="stylesheet">
+  <link href="../../assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
+  <!-- Page level plugin styles END -->
+
+  <!-- Theme styles START -->
+  <link href="../../assets/global/css/components.css" rel="stylesheet">
+  <link href="../../assets/frontend/layout/css/style.css" rel="stylesheet">
+  <link href="../../assets/frontend/pages/css/style-shop.css" rel="stylesheet" type="text/css">
+  <link href="../../assets/frontend/layout/css/style-responsive.css" rel="stylesheet">
+  <link href="../../assets/frontend/layout/css/themes/red.css" rel="stylesheet" id="style-color">
+  <link href="../../assets/frontend/layout/css/custom.css" rel="stylesheet">
+  <!-- Theme styles END -->
+</head>
+<!-- Head END -->
+
+<!-- Body BEGIN -->
+<body class="ecommerce">
+    <!-- BEGIN STYLE CUSTOMIZER -->
+   
+    <!-- END BEGIN STYLE CUSTOMIZER --> 
+
+    <!-- BEGIN TOP BAR -->
+    
+    <!-- END TOP BAR -->
+
+    <!-- BEGIN HEADER -->
+   
+    <!-- Header END -->
+
+    <div class="main">
+      <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="">Store</a></li>
+            <li class="active">Checkout</li>
+        </ul>
+        <!-- BEGIN SIDEBAR & CONTENT -->
+        <div class="row margin-bottom-40">
+          <!-- BEGIN CONTENT -->
+          <div class="row margin-bottom-40">
+            　<form action="/order/pay" method="post">
+                <input type="text" class="hidden" id="csrf" name="_csrf" value="<%=_csrf%>">
+
+            <!-- BEGIN CONTENT -->
+            <div class="col-md-12 col-sm-12">
+
+                <h1>Checkout</h1>
+                <!-- BEGIN CHECKOUT PAGE -->
+                <div class="panel-group checkout-page accordion scrollable" id="checkout-page">
+
+                    <!-- BEGIN SHIPPING ADDRESS -->
+                    <div id="shipping-address" class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#checkout-page" href="#shipping-address-content" class="accordion-toggle">
+                                    Step 1: 收货地址
+                                </a>
+                            </h2>
+                        </div>
+                        <div id="shipping-address-content" class="panel-collapse collapse">
+                            <div class="panel-body row">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="country-dd">收货地址 <span class="require">*</span></label>
+                                       <select class="form-control input-sm" name="address" id="country-dd">
+                                             
+                                        <%if(addresses && addresses.length>0){%>
+                                               
+                                                <%addresses.forEach(function(address,index){%>
+                                                <option value="<%=address._id%>"><%=address.who%>---<%=address.contact%>---<%=address.where%></option>
+                                                <%})%>
+                                            
+                                        <%}else{%>
+                                        <option id="noadd">新增收获地址</option>
+                                        <%}%>
+                                        </select>
+                                    </div>
+
+
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+
+                                  <h3>新增收获地址</h3>
+                                  <div class="form-group">
+                                    <label for="firstname">收货地址<span class="require">*</span></label>
+                                    <input type="text" id="newwhere" class="form-control">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="lastname">收件人<span class="require">*</span></label>
+                                    <input type="text" id="newwho" class="form-control">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="email">联系方式<span class="require">*</span></label>
+                                    <input type="text" id="newcontact" class="form-control">
+                                  </div>
+                                  <span  id="newbtn" class="btn btn-warning">新增</span>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <span class="btn btn-primary  pull-right"  data-toggle="collapse" data-parent="#checkout-page" data-target="#payment-method-content">下一步</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END SHIPPING ADDRESS -->
+
+
+                    <!-- BEGIN PAYMENT METHOD -->
+                    <div id="payment-method" class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#checkout-page" href="#payment-method-content" class="accordion-toggle">
+                                    Step 2: 支付方式
+                                </a>
+                            </h2>
+                        </div>
+                        <div id="payment-method-content" class="panel-collapse collapse">
+                            <div class="panel-body row">
+                                <div class="col-md-12">
+                                    <p>请选择最舒服的支付方式.</p>
+                                    <div class="radio-list">
+                                        <label>
+                                            <input type="radio" name="payment" value="1" checked="checked">在线支付
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="payment" value="2">货到付款
+                                        </label>
+                                    </div>
+                                    <span class="btn btn-primary  pull-right" data-toggle="collapse" data-parent="#checkout-page" data-target="#confirm-content">下一步</span>
+                                    <div class="checkbox pull-right">
+                                        <label>
+                                            <input type="checkbox" disabled="disabled" checked="checked" name="agree"> 我已阅读并同意 <a title="Terms & Conditions" href="#">Terms & Conditions </a> &nbsp;&nbsp;&nbsp;
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END PAYMENT METHOD -->
+
+                    <!-- BEGIN CONFIRM -->
+                    <div id="confirm" class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#checkout-page" href="#confirm-content" class="accordion-toggle">
+                                    Step 3: 确认订单
+                                </a>
+                            </h2>
+                        </div>
+                        <div id="confirm-content" class="panel-collapse collapse">
+                            <div class="panel-body row">
+                                <div class="col-md-12 clearfix">
+                                    <div class="table-wrapper-responsive">
+                                        <table>
+                                            <tr>
+                                                <th class="checkout-image">Image</th>
+                                                <th class="checkout-description">Description</th>
+                                                <th class="checkout-quantity">Quantity</th>
+                                                <th class="checkout-price">Price</th>
+                                                <th class="checkout-total">Total</th>
+                                            </tr>
+                                            <%xbrands.forEach(function(xbrand,index){%>
+                                    <tr id="<%=xbrand.substring(0,24)%>"><td colspan="7"><%=xbrand.substring(25)%></td></tr>
+                                    <%carts.forEach(function(cart,index){%>
+                                        <%if(cart.brand_id._id==xbrand.substring(0,24)){%>
+                                        <tr>
+                                            <td class="hidden"><input checked="true"   name="sure" data-subtotal="<%=cart.num*cart.differ_id.differPrice%>" data-did="<%=cart.differ_id._id%>" class="sure" type="checkbox" value="<%=cart._id%>"></td>
+                                            <td class="checkout-image">
+                                                <a href="#"><img src="http://7xioyb.com1.z0.glb.clouddn.com/@/product/<%=cart.differ_id.picPath%>?imageView2/1/w/75/h/100"></a>
+                                            </td>
+                                            <td class="checkout-description">
+                                                <h3><a href="/product?id=<%=cart.product_id._id%>"><%=cart.product_id.productName%></a></h3>
+                                                <p><strong><%=cart.differ_id.differName%></strong> - <%=cart.differ_id.differDesp%></p>
+                                                <em><%=cart.product_id.keywords%></em>
+                                            </td>
+
+                                            <td class="checkout-quantity">
+                                                <div class="product-quantity">
+                                                    <input id="product-quantity"  type="text" data-price="<%=cart.differ_id.differPrice%>" data-cid="<%=cart._id%>" data-did="<%=cart.differ_id._id%>" value="<%=cart.num%>"   class="q-num form-control input-sm bg-warning">
+                                                </div>
+                                            </td>
+                                            <td class="checkout-price">
+                                                <strong><span>$</span><span class="differPrice"><%=(cart.differ_id.differPrice/100).toFixed(2)%></span></strong>
+                                            </td>
+                                            <td class="checkout-total">
+                                                <strong><span>$</span><span  class="differTotal"><%=((cart.num*cart.differ_id.differPrice)/100).toFixed(2)%></span></strong>
+                                            </td>
+                                            <td class="del-goods-col">
+                                                <a class="del-goods" data-cid="<%=cart._id%>" data-bid="<%=cart.brand_id._id%>"></a>
+                                            </td>
+                                        </tr>
+
+                                <%}%>
+                                <%})%>
+                                <%})%>
+                                        </table>
+                                    </div>
+                                    <div class="checkout-total-block">
+                                        <ul>
+                                            <li class="checkout-total-price">
+                                                <em>Total</em>
+                                                <strong class="price"><span>$</span><b id="total"><%=(total/100).toFixed(2)%></b></strong>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <button class="btn btn-primary pull-right" type="submit" id="button-confirm">Confirm Order</button>
+                                    <button type="button" class="btn btn-default pull-right margin-right-20">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END CONFIRM -->
+                </div>
+                <!-- END CHECKOUT PAGE -->
+            </div>
+            <!-- END CONTENT -->
+            </form>
+        </div>
+          <!-- END CONTENT -->
+        </div>
+        <!-- END SIDEBAR & CONTENT -->
+      </div>
+    </div>
+
+    <!-- BEGIN STEPS -->
+   
+    <!-- END STEPS -->
+
+    <!-- BEGIN PRE-FOOTER -->
+    
+    <!-- END PRE-FOOTER -->
+
+    <!-- BEGIN FOOTER -->
+    
+    <!-- END FOOTER -->
+
+    <!-- Load javascripts at bottom, this will reduce page load time -->
+    <!-- BEGIN CORE PLUGINS(REQUIRED FOR ALL PAGES) -->
+    <!--[if lt IE 9]>
+    <script src="../../assets/global/plugins/respond.min.js"></script>  
+    <![endif]-->
+    <script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+    <script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+    <script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>      
+    <script src="../../assets/frontend/layout/scripts/back-to-top.js" type="text/javascript"></script>
+    <script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+
+    <!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
+    <script src="../../assets/global/plugins/fancybox/source/jquery.fancybox.pack.js" type="text/javascript"></script><!-- pop up -->
+    <script src="../../assets/global/plugins/carousel-owl-carousel/owl-carousel/owl.carousel.min.js" type="text/javascript"></script><!-- slider for products -->
+    <script src='../../assets/global/plugins/zoom/jquery.zoom.min.js' type="text/javascript"></script><!-- product zoom -->
+    <script src="../../assets/global/plugins/bootstrap-touchspin/bootstrap.touchspin3.js" type="text/javascript"></script><!-- Quantity -->
+    <script src="../../assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+
+    <script src="../../assets/frontend/layout/scripts/layout.js" type="text/javascript"></script>
+    <script src="../../assets/frontend/pages/scripts/checkout.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            Layout.init();    
+            Layout.initOWL();
+            Layout.initTwitter();
+            Layout.initImageZoom();
+            Layout.initTouchspin();
+            Layout.initUniform();
+            Checkout.init();
+            $("#newbtn").click(function(){
+                var data={}
+                data.where=$("#newwhere").val()
+                data.who=$("#newwho").val()
+                data.contact=$("#newcontact").val()
+
+                $.ajax({
+                    type:'post',
+                    url:'/address/create',
+                    data:data,
+                    headers:{
+                        'x-csrf-token':$("#csrf").val()
+                    },
+                    success:function(result){
+                        var str="<option selected=\"selected\" value=\""+result._id+"\">"+result.who+"---"+result.contact+"---"+result.where+"</option>"
+                        console.log(str)
+                        $(str).prependTo($("#country-dd"))
+                        $("#newwhere").val("")
+                        $("#newwho").val("")
+                        $("#newcontact").val("")
+                        if($("#noadd")){
+                            $("#noadd").remove()
+                        }
+                    }
+
+
+                })
+
+
+            })
+
+
+            $(".del-goods").click(function(){
+            var cid = $(this).data("cid")
+            var bid= $(this).data("bid")
+            var holder = $(this)
+            $.ajax({
+                type:'post',
+                url:'/cart/del/'+cid+'/2',
+                    headers:{
+                        'x-csrf-token':$("#csrf").val()
+                    },
+                success:function(result){
+
+                   // console.log(nowtotal)
+                    if(result.success==1){
+
+                        if(holder.parent().prev().prev().prev().prev().prev().prev().find(".sure").prop("checked")){
+                            var subtotal = holder.parent().prev().find(".differTotal").text()*100
+                          //  console.log('subtotal'+subtotal)
+                            var evertotal = $("#total").text()*100
+                            var nowtotal=((evertotal-subtotal)/100).toFixed(2)
+                            $("#total").text(nowtotal)
+
+                        }
+                        if(!result.cart1){
+                            var x="#"+bid
+                   //     console.log(x)
+                        $(x).remove()
+                        }
+                        
+                        var everno = parseInt($("#cartno").text(),10)
+                        //    console.log(everno)
+                        if(everno >0){
+                            var nowno = parseInt(everno-1,10)
+                            $("#cartno").text(nowno)
+                        }
+                        holder.parent().parent().remove()
+                        if(!result.cart2){
+                                          $("#checkout").attr("disabled",true)
+
+                        }
+
+                    }
+                   
+                }
+            })
+        })
+
+         
+
+         $(".sure").bind('lsl',function(event){
+             var sum=0
+              $('.sure').each(function(){
+                if($(this).prop("checked")){
+                  
+                 sum+=$(this).parent().parent().parent().next().next().next().next().next().find(".differTotal").text()*100
+                //   console.log($(this).parent().parent().parent().next().next().next().next().next().find(".differTotal").text())
+
+                   
+                  //  console.log('1')
+                }
+                sum+=0
+              //  console.log('2')
+              })
+             // console.log(sum)
+             $("#total").text((sum/100).toFixed(2))
+
+         })
+        });
+    </script>
+    <!-- END PAGE LEVEL JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

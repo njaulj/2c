@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>
+        testing form
+    </title>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            var num = 1;
+            $("p").click(function(){
+                $("p").after('<input type="text" name="differs['+num+'][amount]" value="库存量" /> ');
+                $("p").after('<input type="text" name="differs['+num+'][differPrice]" value="价格" /> ');
+                $("p").after('<input type="text" name="differs['+num+'][differDesp]" value="描述"/> ');
+                $("p").after('<hr><input type="text" name="differs['+num+'][differName]" value="规格"/> ');
+
+                num++;
+            });
+            var pic= 1;
+            $("#addpic").click(function(){
+                $("#addpic").after('<input type="file" name="pics"/>')
+                pic++;
+            })
+
+        });
+    </script>
+</head>
+<body>
+<form method="POST" action="/upload" enctype="multipart/form-data">
+    <input class="hidden" name="_csrf" value="<%=_csrf%>" />
+    <select name="product[brand_id]">
+        <%brands.forEach(function(brand,index){%>
+        <option value="<%=brand._id%>"><%=brand.brandName%></option>
+        <%})%>
+    </select>
+    <input type="text" name="product[productName]" />
+    <input type="text" name="product[productDesp]" />
+    <input type="file" name="pics"/>
+    <input type="submit">
+    <p>添加</p>
+    <input type="text" name="differs[0][differName]" value="规格" />
+    <input type="text" name="differs[0][differDesp]" value="描述" />
+    <input type="text" name="differs[0][differPrice]" value="价格" />
+    <input type="text" name="differs[0][amount]" value="库存量" />
+    <span id="addpic">加图</span>
+    <br />
+
+</form>
+
+</body>
+
+</html>

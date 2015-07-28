@@ -1,0 +1,627 @@
+
+<!DOCTYPE html>
+<!-- 
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 3.4
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest (the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<!-- Head BEGIN -->
+<head>
+  <meta charset="utf-8">
+  <title>蔓藤商城-<%=item.name%></title>
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <meta content="Metronic Shop UI description" name="description">
+  <meta content="Metronic Shop UI keywords" name="keywords">
+  <meta content="keenthemes" name="author">
+
+  <meta property="og:site_name" content="-CUSTOMER VALUE-">
+  <meta property="og:title" content="-CUSTOMER VALUE-">
+  <meta property="og:description" content="-CUSTOMER VALUE-">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="-CUSTOMER VALUE-"><!-- link to image for socio -->
+  <meta property="og:url" content="-CUSTOMER VALUE-">
+
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- Fonts START 
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|PT+Sans+Narrow|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css"> -->
+  <!-- Fonts END -->
+
+  <!-- Global styles START -->          
+  <link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Global styles END --> 
+   
+  <!-- Page level plugin styles START -->
+  <link href="../../assets/global/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet">
+  <link href="../../assets/global/plugins/carousel-owl-carousel/owl-carousel/owl.carousel.css" rel="stylesheet">
+  <link href="../../assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
+  <link href="../../assets/global/plugins/jquery-ui/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"><!-- for slider-range -->
+  <link href="../../assets/global/plugins/rateit/src/rateit.css" rel="stylesheet" type="text/css">
+  <!-- Page level plugin styles END -->
+
+  <!-- Theme styles START -->
+  <link href="../../assets/global/css/components.css" rel="stylesheet">
+  <link href="../../assets/frontend/layout/css/style.css" rel="stylesheet">
+  <link href="../../assets/frontend/pages/css/style-shop.css" rel="stylesheet" type="text/css">
+  <link href="../../assets/frontend/layout/css/style-responsive.css" rel="stylesheet">
+  <link href="../../assets/frontend/layout/css/themes/red.css" rel="stylesheet" id="style-color">
+  <link href="../../assets/frontend/layout/css/custom.css" rel="stylesheet">
+  <!-- Theme styles END -->
+</head>
+<!-- Head END -->
+
+<!-- Body BEGIN -->
+<body class="ecommerce">
+
+  <input type="text" class="hidden" value="<%=_csrf%>" id="csrf" />
+    <!-- BEGIN STYLE CUSTOMIZER -->
+    
+    <!-- END BEGIN STYLE CUSTOMIZER --> 
+
+    <!-- BEGIN TOP BAR -->
+    
+    <!-- END TOP BAR -->
+
+    <!-- BEGIN HEADER -->
+    <%-include ../public/pre-header%>
+    <%-include ../public/header%>
+    <!-- Header END -->
+    
+    <div class="main">
+      <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="index.html">商城</a></li>
+            <li><a href=""><%=item.Brand.brandName%></a></li>
+            <li class="active"><a href="/item/show/<%=item.id%>"><%=item.name%><a></li>
+        </ul>
+        <!-- BEGIN SIDEBAR & CONTENT -->
+        <div class="row margin-bottom-40">
+          <!-- BEGIN SIDEBAR -->
+          <%-include ../public/sidebar%>
+          <!-- END SIDEBAR -->
+
+          <!-- BEGIN CONTENT -->
+
+          <%var skuarr = _.pluck(_.filter(item.Pics,function(s){return s.picPrice > 0}),'id')%>
+          <%if(SKU && _.includes(skuarr,parseInt(SKU))){var sku =_.find(item.Pics,{'id':parseInt(SKU)})%>
+
+            <div class="col-md-9 col-sm-7">
+            <div class="product-page">
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="product-main-image">
+                    <img id="pic"  src="http://7xkj70.com1.z0.glb.clouddn.com<%=sku.cloudPath%>?imageView2/1/w/382/h/509/interlace/1" alt="Cool green dress with red bell" class="img-responsive" data-BigImgsrc="http://7xkj70.com1.z0.glb.clouddn.com<%=sku.cloudPath%>">
+                  </div>
+                  <div class="product-other-images">
+                    <%var showgirls = _.filter(item.Pics,_.matches({'picPrice':0}))%>
+                    <%showgirls.forEach(function(showgirl,index){%>
+                      <a href="http://7xkj70.com1.z0.glb.clouddn.com<%=showgirl.cloudPath%>" class="fancybox-button" rel="photos-lib"><img alt="Berry Lace Dress" src="http://7xkj70.com1.z0.glb.clouddn.com<%=showgirl.cloudPath%>?imageView2/1/w/58/h/77"></a>
+                    <%})%>
+                    
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <h1><%=item.name%>_<small><%=sku.picSku%></small></h1>
+                <div class="price-availability-block clearfix">
+                    <div class="price">
+                      
+                       <strong><span>$</span><div class="inline" id="differPrice"><%=parseFloat(sku.picPrice).toFixed(2)%></div></strong>
+                      <em>$<span id="marketPrice"><%=parseFloat(sku.picMarket).toFixed(2)%></span></em>
+                    </div>
+                    <div class="availability">
+                      <strong id="onsale" class="bg-red"><%=parseFloat(sku.picPrice/sku.picMarket*10).toFixed(1)%>折</strong>
+                    </div>
+                  </div>
+                  <div class="description">
+                    <p><%-item.shortDesp%></p>
+                  </div>
+                  <div class="product-page-options">
+                  <div class="pull-left">
+                        <label class="control-label">选择:</label>
+                      <select id="differ" class="form-control input-sm">
+                        <%var pickgirls = _.filter(item.Pics,function(s){return s.picPrice > 0})%>
+                        <%pickgirls.forEach(function(pickgirl,index){%>
+                        <%if(sku.id == pickgirl.id){%>
+  <option  data-iid=<%=item.id%> data-bid=<%=item.BrandId%> data-pic=<%=pickgirl.cloudPath%> data-price=<%=pickgirl.picPrice%> data-market=<%=pickgirl.picMarket%> data-pid=<%=pickgirl.id%> selected="selected"><%=pickgirl.picSku%></option>
+                        <%}else{%>
+ <option  data-iid=<%=item.id%> data-bid=<%=item.BrandId%> data-pic=<%=pickgirl.cloudPath%> data-price=<%=pickgirl.picPrice%> data-market=<%=pickgirl.picMarket%> data-pid=<%=pickgirl.id%>><%=pickgirl.picSku%></option>
+                        <%}%>
+                      <%})%>
+                    </select>
+                     </div>
+                  </div>
+                  <div class="product-page-cart">
+                    <div class="product-quantity">
+                        <input id="product-quantity" type="text" value="1"  class="form-control input-sm">
+                    </div>
+                    <button id="cart" class="btn btn-primary" type="submit">加入购物车</button>
+                  </div>
+                  <div class="review">
+                    <input type="range" value="4" step="0.25" id="backing4">
+                    <div class="rateit" data-rateit-backingfld="#backing4" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5">
+                    </div>
+                    <a href="javascript:;">击败了 80% 的商品</a>&nbsp;&nbsp;
+                  </div>
+                </div>
+
+                <div class="product-page-content">
+                  <ul id="myTab" class="nav nav-tabs">
+                    <li  class="active"><a href="#Description" data-toggle="tab">商品详情</a></li>
+                    <li  ><a href="#Meta" data-toggle="tab">商品参数</a></li>
+                  </ul>
+                  <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade  in active" id="Description">
+                      <p><%-item.desp%></p>
+                    </div>
+                    <div class="tab-pane fade " id="Meta">
+                      <p><%-item.meta%></p>
+                    </div>
+                    
+                    <div class="tab-pane fade" id="Reviews">
+                      <!--<p>There are no reviews for this product.</p>-->
+                    <div id="comments">
+                      
+                    </div>
+                      <!-- BEGIN FORM-->
+      
+                      <!-- END FORM--> 
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sticker sticker-sale"></div>
+              </div>
+            </div>
+          </div>
+            
+          <%}else{%>
+          <%var sku =_.sortByOrder(_.filter(item.Pics,function(s){return s.picPrice > 0}),['heavy'],['desc'])[0]%>
+          <%var showen =_.sortByOrder(item.Pics,['heavy'],['desc'])[0] %>
+            <div class="col-md-9 col-sm-7">
+            <div class="product-page">
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="product-main-image">
+                    <img id="pic"  src="http://7xkj70.com1.z0.glb.clouddn.com/<%=showen.cloudPath%>?imageView2/1/w/382/h/509/interlace/1" alt="Cool green dress with red bell" class="img-responsive" data-BigImgsrc="http://7xkj70.com1.z0.glb.clouddn.com/<%=showen.cloudPath%>">
+                  </div>
+                  <div class="product-other-images">
+                    <%var showgirls = _.filter(item.Pics,_.matches({'picPrice':0}))%>
+                    <%showgirls.forEach(function(showgirl,index){%>
+                      <a href="http://7xkj70.com1.z0.glb.clouddn.com/<%=showgirl.cloudPath%>" class="fancybox-button" rel="photos-lib"><img alt="Berry Lace Dress" src="http://7xkj70.com1.z0.glb.clouddn.com/<%=showgirl.cloudPath%>?imageView2/1/w/58/h/77"></a>
+                    <%})%>
+                    
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <h1><%=item.name%>_<small><%=sku.picSku%></small></h1>
+                <div class="price-availability-block clearfix">
+                    <div class="price">
+                      
+                       <strong><span>$</span><div class="inline" id="differPrice"><%=parseFloat(sku.picPrice).toFixed(2)%></div></strong>
+                      <em>$<span id="marketPrice"><%=parseFloat(sku.picMarket).toFixed(2)%></span></em>
+                    </div>
+                    <div class="availability">
+                      <strong id="onsale" class="bg-red"><%=parseFloat(sku.picPrice/sku.picMarket*10).toFixed(1)%>折</strong>
+                    </div>
+                  </div>
+                  <div class="description">
+                    <p><%-item.shortDesp%></p>
+                  </div>
+                  <div class="product-page-options">
+                  <div class="pull-left">
+                        <label class="control-label">选择:</label>
+                      <select id="differ" class="form-control input-sm">
+                        <%var pickgirls = _.filter(item.Pics,function(s){return s.picPrice > 0})%>
+                        <%pickgirls.forEach(function(pickgirl,index){%>
+                        <%if(sku.id == pickgirl.id){%>
+  <option  data-iid=<%=item.id%> data-bid=<%=item.BrandId%> data-pic=<%=pickgirl.cloudPath%> data-price=<%=pickgirl.picPrice%> data-market=<%=pickgirl.picMarket%> data-pid=<%=pickgirl.id%> selected="selected"><%=pickgirl.picSku%></option>
+                        <%}else{%>
+ <option  data-iid=<%=item.id%> data-bid=<%=item.BrandId%> data-pic=<%=pickgirl.cloudPath%> data-price=<%=pickgirl.picPrice%> data-market=<%=pickgirl.picMarket%> data-pid=<%=pickgirl.id%>><%=pickgirl.picSku%></option>
+                        <%}%>
+                      <%})%>
+                    </select>
+                     </div>
+                  </div>
+                  <div class="product-page-cart">
+                    <div class="product-quantity">
+                        <input id="product-quantity" type="text" value="1"  class="form-control input-sm">
+                    </div>
+                    <button id="cart" class="btn btn-primary" type="submit">加入购物车</button>
+                  </div>
+                  <div class="review">
+                    <input type="range" value="4" step="0.25" id="backing4">
+                    <div class="rateit" data-rateit-backingfld="#backing4" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5">
+                    </div>
+                    <a href="javascript:;">击败了 80% 的商品</a>&nbsp;&nbsp;
+                  </div>
+                  <ul class="social-icons">
+                    <li><a class="facebook" data-original-title="facebook" href="javascript:;"></a></li>
+                    <li><a class="twitter" data-original-title="twitter" href="javascript:;"></a></li>
+                    <li><a class="googleplus" data-original-title="googleplus" href="javascript:;"></a></li>
+                    <li><a class="evernote" data-original-title="evernote" href="javascript:;"></a></li>
+                    <li><a class="tumblr" data-original-title="tumblr" href="javascript:;"></a></li>
+                  </ul>
+                </div>
+
+                <div class="product-page-content">
+                  <ul id="myTab" class="nav nav-tabs">
+                    <li  class="active"><a href="#Description" data-toggle="tab">商品详情</a></li>
+                    <li  ><a href="#Meta" data-toggle="tab">商品参数</a></li>
+                  </ul>
+                  <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade  in active" id="Description">
+                      <p><%-item.desp%></p>
+                    </div>
+                    <div class="tab-pane fade " id="Meta">
+                      <p><%-item.meta%></p>
+                    </div>
+                    
+                    <div class="tab-pane fade" id="Reviews">
+                      <!--<p>There are no reviews for this product.</p>-->
+                    <div id="comments">
+                      
+                    </div>
+                      <!-- BEGIN FORM-->
+      
+                      <!-- END FORM--> 
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sticker sticker-sale"></div>
+              </div>
+            </div>
+          </div>
+          <%}%>
+          <!-- END CONTENT -->
+        </div>
+        <!-- END SIDEBAR & CONTENT -->
+
+        <!-- BEGIN SIMILAR PRODUCTS -->
+        <!-- END SIMILAR PRODUCTS -->
+      </div>
+    </div>
+
+
+    <!-- BEGIN STEPS -->
+        <%-include ../public/steps-block%>
+    <!-- END STEPS -->
+
+
+    <!-- BEGIN FOOTER -->
+        <%-include ../public/footer%>
+
+    <!-- END FOOTER -->
+
+
+    <!-- Load javascripts at bottom, this will reduce page load time -->
+    <!-- BEGIN CORE PLUGINS(REQUIRED FOR ALL PAGES) -->
+    <!--[if lt IE 9]>
+    <script src="../../assets/global/plugins/respond.min.js"></script>  
+    <![endif]-->  
+    <script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+    <script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+    <script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>      
+    <script src="../../assets/frontend/layout/scripts/back-to-top.js" type="text/javascript"></script>
+    <script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+
+    <!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
+    <script src="../../assets/global/plugins/fancybox/source/jquery.fancybox.pack.js" type="text/javascript"></script><!-- pop up -->
+    <script src="../../assets/global/plugins/carousel-owl-carousel/owl-carousel/owl.carousel.min.js" type="text/javascript"></script><!-- slider for products -->
+    <script src='../../assets/global/plugins/zoom/jquery.zoom.min.js' type="text/javascript"></script><!-- product zoom -->
+    <script src="../../assets/global/plugins/bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script><!-- Quantity -->
+    <script src="../../assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+    <script src="../../assets/global/plugins/rateit/src/jquery.rateit.js" type="text/javascript"></script>
+    <script src="../../assets/global/scripts/cart.js" type="text/javascript"></script>
+    <script src="../../assets/global/scripts/newp.js" type="text/javascript"></script>
+    <script src="../../assets/global/scripts/fastview.js" type="text/javascript"></script>
+    <script src="../../assets/global/scripts/brand.js" type="text/javascript"></script>
+
+
+        <script src="../../assets/global/scripts/top.js" type="text/javascript"></script>
+    <script src="../../assets/global/scripts/intro.js" type="text/javascript"></script>
+    <script src="http://momentjs.com/downloads/moment.min.js" type="text/javascript"></script>
+
+    <script src="../../assets/frontend/layout/scripts/layout.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var dselect=[]
+        jQuery(document).ready(function() {
+            Layout.init();    
+        //    Layout.initOWL();
+            Layout.initTwitter();
+            Layout.initImageZoom();
+            Layout.initTouchspin();
+            Layout.initUniform();
+         //   Layout.initFixHeaderWithPreHeader();
+            Ecart.init()
+          //  Brand.init()
+
+          //  Top.init()
+         //   Intro.init()
+            v()
+            $("#popnew").hover(function(){
+               t=setTimeout(function(){
+
+                Newp.init()},200)
+            },
+            function(){
+
+              clearTimeout(t)
+            }
+            )       
+
+
+            $("#comm").click(function(){
+              var pid=$(this).data("pid")
+              $.ajax({
+                url:'/ajaxcomm?id='+pid+'&isajax=1',
+                type:'get',
+                success:function(data){
+                 $("#comments").empty()
+                  data.forEach(function(comment,index){
+                    var str="<div class=\"review-item clearfix\">"
+                          +"<div class=\"review-item-submitted\">"
+                          +"<strong>"+comment.from.userName+"</strong>"
+                          +"<em>"+moment(comment.createAt).format('DD/MM/YYYY - hh:mm')+"</em>"
+                          +"<div class=\"rateit\" data-rateit-value=\""+(comment.rating/100)+"\" data-rateit-ispreset=\"true\" data-rateit-readonly=\"true\"></div>"
+                          +"</div>"
+                          +"<div class=\"review-item-content\">"
+                          +"<p>"+comment.content+"</p>"
+                          +"</div></div>"
+                    $("#comments").append(str)
+                  })
+                  ratereset()
+            
+                },
+                error:function(){
+
+                }
+              })
+            })
+
+
+             $("#signin").bind('isajax',function(){
+                location.href = "/signin"
+             })
+
+            $("#differ").change(function(){
+               var differ=$("#differ").find("option:selected");
+                        
+
+               $("#differPrice").text((differ.data("price")).toFixed(2))
+               $("#marketPrice").text((differ.data("market")).toFixed(2))
+             //  $(".zoomImg").attr("src","http://7xkj70.com1.z0.glb.clouddn.com/@/product/"+differ.data("pic"))
+                $(".zoomImg").remove()
+               $("#pic").attr("src","http://7xkj70.com1.z0.glb.clouddn.com"+differ.data("pic")+"?imageView2/1/w/382/h/509/interlace/1")
+
+               $("#pic").attr("data-BigImgsrc","http://7xkj70.com1.z0.glb.clouddn.com"+differ.data("pic"))
+
+               $("#onsale").text(parseFloat(differ.data("price")/differ.data("market")*10).toFixed(1)+'折')
+                Layout.initImageZoom();
+
+            })
+
+            $("#fdiffer").change(function(){
+               var differ=$("#fdiffer").find("option:selected");
+               var did=differ.data("did")
+                        
+
+               if(inarray(did,dselect)==2){
+                  $("#fcart").attr("disabled",true)
+                   $("#cart").attr("disabled",true)
+
+               }else{
+                $("#fcart").attr("disabled",false)
+                $("#cart").attr("disabled",false)
+
+               }
+
+               $("#fdifferPrice").text((differ.data("price")/100).toFixed(2))
+               $("#fmarketPrice").text((differ.data("market")/100).toFixed(2))
+             //   $(".zoomImg").attr("src","http://7xkj70.com1.z0.glb.clouddn.com/@/product/"+differ.data("pic"))
+                $(".zoomImg").remove()
+               $("#fpic").attr("src","http://7xkj70.com1.z0.glb.clouddn.com/@/product/"+differ.data("pic")+"?imageView2/1/w/382/h/509/interlace/1")
+
+               $("#fpic").attr("data-BigImgsrc","http://7xkj70.com1.z0.glb.clouddn.com/@/product/"+differ.data("pic"))
+
+               $("#fonsale").text(parseFloat(differ.data("price")/differ.data("market")*10).toFixed(1)+'折')
+             //   Layout.initImageZoom();
+
+            })
+            
+
+            $("#fcart").click(function(){
+               var differ=$("#fdiffer").find("option:selected");
+              
+               alert('/1')
+               pid=differ.data("pid")
+               bid=differ.data("bid")
+               did=differ.data("did")
+               
+               num=$("#fproduct-quantity").val()
+
+
+               $.ajax({
+                url:'/user/cart/add/'+bid+'/'+pid+'/'+did+'/'+num+'?isajax=1',
+                type:'post',
+                headers:{
+                  'x-csrf-token':$("#csrf").val()
+                },
+                success:function(data){
+                  if(data.success==403){
+                    console.log(403)
+                    $("#signin").trigger('isajax')
+                  }else{
+                   // alert('good')
+                               
+  if(inarray(pid,dselect)!=2){
+                                      dselect.push(pid)
+
+                                }
+                                                    console.log(dselect)
+
+                   $("#fcart").attr("disabled",true)
+                   Ecart.init()
+                 }
+                },
+                error:function(data){
+                   // alert('error')
+
+                }
+               })
+            })
+
+            $("#cart").click(function(){
+               var differ=$("#differ").find("option:selected");
+              
+               
+               iid=differ.data("iid")
+               bid=differ.data("bid")
+               pid=differ.data("pid")
+               
+               amount=$("#product-quantity").val()
+
+
+               $.ajax({
+                url:'/user/cart/add/'+bid+'/'+iid+'/'+pid+'/'+amount,
+                type:'post',
+                headers:{
+                  'x-csrf-token':$("#csrf").val()
+                },
+                success:function(data){
+                  if(data.success==403){
+                    console.log(403)
+                    $("#signin").trigger('isajax')
+                  }else{
+                   // alert('good')
+                     
+                   Ecart.init()
+                 }
+                },
+                error:function(data){
+                   // alert('error')
+
+                }
+               })
+            })
+           
+
+        });
+
+    
+        
+
+
+        function v(){
+           $(function() {  
+        $(".del-goods").bind('click',function(){
+             var cid=$(this).data("cid")
+             var num=$(this).data("num")
+             var did=$(this).data("did")
+             var holder=$(this)
+              $.ajax({
+                type:'post',
+                url:'/user/cart/delete/'+cid,
+                headers:{
+                  'x-csrf-token':$("#csrf").val()
+                },
+                success:function(result){
+                    Ecart.init()
+
+                    var s="#"+cid
+                    $(s).remove()
+
+                }
+              })
+        
+        })
+
+
+        $(".add2cart").bind('click',function(){
+                   var differ =$(this)
+                   console.log($(this))
+
+                   pid=differ.data("pid")
+                   bid=differ.data("bid")
+                   did=differ.data("did")
+
+                  num=1
+                  
+                  
+               //   console.log(pid+bid+did)
+
+
+                   $.ajax({
+                        url:'/addCart/'+bid+'/'+pid+'/'+did+'/'+num+'?isajax=1',
+                        type:'get',
+                        success:function(data){
+                           // alert('good')
+                           if(data.success==403){
+                    console.log(403)
+                    $("#signin").trigger('isajax')
+                  }else{
+                   // alert('good')
+                               Ecart.init()
+  if(inarray(did,dselect)!=2){
+                                      dselect.push(did)
+
+                                }
+                                                    console.log(dselect)
+
+                           differ.attr("disabled",true)
+                 }
+                        },
+                        error:function(data){
+                           // alert('error')
+
+                        }
+                       })
+
+
+
+              }) 
+        })
+        } 
+
+        function ratereset(){
+          $(".rateit").each(function(){
+            $(this).rateit()
+          })
+        }
+
+        function inarray(a,b){
+          for (i in b){
+            if(b[i]==a){
+              return 2
+            }
+          }
+          return 1
+        }
+       //   var cid=$(this).data("cid")
+         
+        
+
+    </script>
+
+
+    <!-- END PAGE LEVEL JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

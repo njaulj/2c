@@ -1,0 +1,25 @@
+<div class="row margin-bottom-40">
+          <div class="col-md-12 col-sm-12">
+            <h2>相似商品</h2>
+            <div class="owl-carousel owl-carousel4">
+              <%similaries.forEach(function(similar,index){%>
+
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="http://7xioyb.com1.z0.glb.clouddn.com/@/product/<%=similar.picPath%>?imageView2/1/w/251/h/230/interlace/1" class="img-responsive" alt="<%=similar.productName%>">
+                    <div>
+                      <a href="http://7xioyb.com1.z0.glb.clouddn.com/@/product/<%=similar.picPath%>" class="btn btn-default fancybox-button">看仔细</a>
+                      <a href="#product-pop-up" data-pid="<%=similar.product_id%>" data-did="<%=similar.differ_id%>" class="btn btn-default fancybox-fast-view">快速通道</a>
+                    </div>
+                  </div>
+                  <h3><a href="/product?id=<%=similar.product_id%>&did=<%=similar.differ_id%>"><%=similar.productName%></a></h3>
+                  <div class="pi-price">$<%=(similar.differPrice/100).toFixed(2)%></div>
+                  <a data-bid="<%=similar.brand_id%>" data-pid="<%=similar.product_id%>" data-did="<%=similar.differ_id%>" class="btn btn-default add2cart">加入购物车</a>
+                  <div class="sticker sticker-new"></div>
+                </div>
+              </div>
+              <%})%>
+            </div>
+          </div>
+        </div>
